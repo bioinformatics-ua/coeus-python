@@ -24,15 +24,15 @@ class COEUS:
 
 
 	def __init__(self, api_key, host="http://bioinformatics.ua.pt/coeus"):
-		self.__host = host
-		self.__key = api
+		self.host = host
+		self.key = api
 
 	def triple(self):
 		content = requests.get(self.host + 'api/triple/' + sub + '/' + pred + '/' + obj + '/js')
   		return json.loads(content)['results']['bindings']
 		
 	def query(self,query):
-		return sparql.query(self.host, q)
+		return sparql.query(self.host, query)
   		
 	def write(self,sub, pred, obj):
 
@@ -57,8 +57,8 @@ class COEUS:
 	  		else:
 	  			return true
 
-	def delete(sub, pred, obj):
-		if key == ''
+	def delete(self,sub, pred, obj):
+		if self.key == ''
   			raise '[COEUS] undefined API key'
   		else
 	  		content = requests.get(self.host + 'api/' + self.key + '/delete/' + sub + '/' + pred + '/' + obj)
