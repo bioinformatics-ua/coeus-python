@@ -58,13 +58,13 @@ class COEUS:
 	  			return true
 
 	def delete(self,sub, pred, obj):
-		if self.key == ''
+		if self.key == '':
   			raise '[COEUS] undefined API key'
-  		else
+  		else:
 	  		content = requests.get(self.host + 'api/' + self.key + '/delete/' + sub + '/' + pred + '/' + obj)
 	  		
 	  		result = json.loads(content)
-	  		if result['status'] != 100
+	  		if result['status'] != 100:
 	  			raise '[COEUS] unable to delete triple: ' + result['message']
 	  		else:
 	  			return true
