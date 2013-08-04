@@ -46,7 +46,7 @@ class COEUS:
 	  		else:
 	  			return true 
 	  	
-	def update(sub, pred, old_obj, new_obj):
+	def update(self, sub, pred, old_obj, new_obj):
 		if self.key == ''
   			raise '[COEUS] undefined API key'
   		else
