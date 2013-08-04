@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 
 
 __title__ = 'coeus'
@@ -14,22 +14,20 @@ __email__ = 'bastiao@ua.pt'
 import sys
 import time
 import json
-
 import requests
-
 import sparql
 
 
 class COEUS:
 
 
-	def __init__(self, api_key, host="http://bioinformatics.ua.pt/coeus"):
+	def __init__(self, api_key, host="http://bioinformatics.ua.pt/coeus/"):
 		self.host = host
-		self.key = api
+		self.key = api_key
 
-	def triple(self):
+	def triple(self, sub, pred, obj):
 		content = requests.get(self.host + 'api/triple/' + sub + '/' + pred + '/' + obj + '/js')
-  		return json.loads(content)['results']['bindings']
+  		return json.loads(content)#['results']['bindings']
 		
 	def query(self,query):
 		return sparql.query(self.host, query)
@@ -47,9 +45,9 @@ class COEUS:
 	  			return true 
 	  	
 	def update(self, sub, pred, old_obj, new_obj):
-		if self.key == ''
+		if self.key == '':
   			raise '[COEUS] undefined API key'
-  		else
+  		else:
 	  		content = requests.get(self.host + 'api/' + self.key + '/update/' + sub + '/' + pred + '/' + old_obj + ',' + new_obj).read
 	  		result = json.loads(content)
 	  		if result['status'] != 100:
