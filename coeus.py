@@ -50,7 +50,7 @@ class COEUS:
 		if self.key == ''
   			raise '[COEUS] undefined API key'
   		else
-	  		content = URI.parse(@host + 'api/' + self.key + '/update/' + sub + '/' + pred + '/' + old_obj + ',' + new_obj).read
+	  		content = requests.get(self.host + 'api/' + self.key + '/update/' + sub + '/' + pred + '/' + old_obj + ',' + new_obj).read
 	  		result = json.loads(content)
 	  		if result['status'] != 100:
 	  			raise '[COEUS] unable to update triple: ' + result['message']
