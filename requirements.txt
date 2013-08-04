@@ -1,0 +1,2 @@
+requests
+sparql-client==1.3
