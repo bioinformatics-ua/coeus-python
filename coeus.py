@@ -28,11 +28,10 @@ class COEUS(object):
 	def triple(self, sub, pred, obj):
 		content = requests.get(self.host + 'api/triple/' + sub + '/' + pred + '/' + obj + '/js')
 		print self.host + 'api/triple/' + sub + '/' + pred + '/' + obj + '/js'
-		print content.text
-		print content.json()
-  		return json.loads(content)#['results']['bindings']
+  		return json.loads(content.text)['results']['bindings']
 		
 	def query(self,query):
+		print query
 		return sparql.query(self.host, query)
   		
 	def write(self,sub, pred, obj):
