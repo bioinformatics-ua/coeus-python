@@ -15,7 +15,7 @@ import sys
 import time
 import json
 import requests
-import sparql
+from SPARQLWrapper import SPARQLWrapper, JSON
 
 
 class COEUS(object):
@@ -31,9 +31,17 @@ class COEUS(object):
   		return json.loads(content.text)['results']['bindings']
 		
 	def query(self,query):
-		print query
-		return sparql.query(self.host, query)
+
+
+
+
+		sparql = SPARQLWrapper(self.host+"sparql")
+		sparql.setQuery(query)
+  		sparql.setReturnFormat(JSON)
+  		results = sparql.query()
+  		return results.convert()
   		
+
 	def write(self,sub, pred, obj):
 
 		if self.key=='':

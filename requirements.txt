@@ -1,2 +1,2 @@
 requests
-sparql-client==1.3
+SPARQLWrapper==1.5.2
