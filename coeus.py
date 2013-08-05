@@ -40,22 +40,23 @@ class COEUS(object):
 			raise '[COEUS] undefined API key'
 		else:
 			content = requests.get(self.host + 'api/' + self.key + '/write/' + sub + '/' + pred + '/' + obj)
-			result = json.loads(content)
-			if content.status_code != 100:
-	  			raise '[COEUS] unable to store triple: ' + result['message']
+			result = json.loads(content.text)
+
+			if result['status'] != 100:
+	  			raise Exception('[COEUS] unable to store triple ')
 	  		else:
-	  			return true 
+	  			return True 
 	  	
 	def update(self, sub, pred, old_obj, new_obj):
 		if self.key == '':
   			raise '[COEUS] undefined API key'
   		else:
-	  		content = requests.get(self.host + 'api/' + self.key + '/update/' + sub + '/' + pred + '/' + old_obj + ',' + new_obj).read
-	  		result = json.loads(content)
-	  		if content.status_code != 100:
-	  			raise '[COEUS] unable to update triple: ' + result['message']
+	  		content = requests.get(self.host + 'api/' + self.key + '/update/' + sub + '/' + pred + '/' + old_obj + ',' + new_obj)
+	  		result = json.loads(content.text)
+	  		if result['status'] != 100:
+	  			raise '[COEUS] unable to update triple: ' 
 	  		else:
-	  			return true
+	  			return True
 
 	def delete(self,sub, pred, obj):
 		if self.key == '':
@@ -63,11 +64,11 @@ class COEUS(object):
   		else:
 	  		content = requests.get(self.host + 'api/' + self.key + '/delete/' + sub + '/' + pred + '/' + obj)
 	  		
-	  		result = json.loads(content)
-	  		if content.status_code != 100:
-	  			raise '[COEUS] unable to delete triple: ' + result['message']
+	  		result = json.loads(content.text)
+	  		if result['status'] != 100:
+	  			raise '[COEUS] unable to delete triple: '
 	  		else:
-	  			return true
+	  			return True
 
 
 
