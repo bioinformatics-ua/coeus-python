@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+# Copyright 2013, Luís Bastião Silva, Universidade de Aveiro
+# Authors: Luis A. Bastiao Silva <luis.kop@gmail.com> 
+
 
 import coeus 
 
