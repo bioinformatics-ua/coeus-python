@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python
 
 '''
 coeus-python - coeus API client for Python
@@ -13,7 +12,7 @@ Install it with::
 
     $ pip install coeus
 
-:copyright: (c) 2013, Luís A. Bastião Silva, Universidade de Aveiro
+:copyright: (c) 2013, Luis A. Bastiao Silva, Universidade de Aveiro
 :license: Creative Commons Attribution-Noncommercial
 
 
@@ -54,6 +53,7 @@ def get_version(filepath='coeus.py'):
 setup(name='coeus',
       description='coeus API client for Python.',
       long_description=__doc__,
+      version=__version__,
       author='Luis A. Bastiao Silva',
       author_email='bastiao@ua.pt',
       license='CC-BY-NC',

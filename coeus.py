@@ -10,13 +10,14 @@ __url__ = 'http://bioinformatics.ua.pt/coeus'
 
 __maintainer__ = 'Luís A. Bastião Silva'
 __email__ = 'bastiao@ua.pt'
+__version__ = '0.1-dev'
+
 
 import sys
 import time
 import json
 import requests
 from SPARQLWrapper import SPARQLWrapper, JSON
-
 
 class COEUS(object):
 
