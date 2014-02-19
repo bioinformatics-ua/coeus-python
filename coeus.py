@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# Copyright 2013, Luís Bastião Silva, Universidade de Aveiro
+# Authors: Luis A. Bastiao Silva <luis.kop@gmail.com> 
 
 __title__ = 'coeus'
 __version__ = '0.1-dev'
@@ -79,6 +81,10 @@ class COEUS(object):
 	  		else:
 	  			return True
 
+	def search(self,query):
+		content = requests.get(self.host + 'textsearch/query='+query)
+  		result = json.loads(content.text)
+  		return result
 
 
 

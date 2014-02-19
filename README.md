@@ -42,18 +42,26 @@ c.query('SELECT * {?s ?p ?o}')
 c.write('coeus:python_x','dc:title','python_x')
 ```
 
-```ruby
+```python
 # updates triple in COEUS knowledge base (http://bioinformatics.ua.pt/coeus/documentation/#rest)
 # returns true if data updated
 c.update('coeus:python_x','dc:title','python_x', 'coeus-python')
 
 ```
 
-```ruby
+```python
 # delete triple from COEUS knowledge base (http://bioinformatics.ua.pt/coeus/documentation/#rest)
 # returns true if data deleted
 c.delete('coeus:python_x','dc:title','coeus-python')
 ```
+
+
+```python
+# search in free text #ALPHA #TESTING
+# returns the triple results
+c.search('Nanopublications')
+```
+
 
 
 ## Contact
