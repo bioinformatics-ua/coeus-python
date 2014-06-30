@@ -63,6 +63,12 @@ c.search('Nanopublications')
 ```
 
 
+```python
+# import data into COEUS knowledge base
+# returns the result
+c.read("test_file.rdf", "RDF/XML")
+```
+
 
 ## Contact
 Luis A. Bastiao Silva - bastiao at ua dot pt

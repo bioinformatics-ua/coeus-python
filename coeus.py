@@ -86,6 +86,15 @@ class COEUS(object):
   		result = json.loads(content.text)
   		return result
 
-
-
-
+	def read(self,filename, language):
+		if self.key == '':
+  			raise '[COEUS] undefined API key'
+  		else:
+			f = open(filename, 'r')
+			post_data = json.dumps({'data':f.read(), 'lang':language})
+			content = requests.post(self.host + 'api/' + self.key + '/read/', json.loads(post_data))
+			result = json.loads(content.text)
+			if result['status'] != 100:
+	  			return '[COEUS] unable to read "'+ filename+ '" - '+ result['message']
+	  		else:
+	  			return '[COEUS] read of "'+ filename+ '" OK'
