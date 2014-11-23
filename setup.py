@@ -32,7 +32,7 @@ Resources
 import sys
 from distutils.core import setup
 
-__version__ = '0.1-dev'
+__version__ = '0.2'
 
 
 if sys.version_info < (2, 7):
